@@ -10,12 +10,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <!-- Materialize CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+
+    </script>
 </head>
 
 <body>
     <section class="hero is-fullheight">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <div class="hero-head #90caf9 blue lighten-3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <nav class="blue" style="padding:0px 10px;">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">Environmental Development</a>
+
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <ul class="right hide-on-med-and-down "  >
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('main.profile') }}">Profile</a></li>
+                        <li><a href="{{ url_for('main.articles') }}">Articles</a></li>
+                        {% endif %}
+
+                        {% if not current_user.is_authenticated %}
+                        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                        <li><a href="{{ url_for('auth.signup') }}">Sign Up</a></li>
+                        {% endif %}
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                        {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="{{ url_for('main.index') }}">Home</a></li>
+        {% if current_user.is_authenticated %}
+        <li><a href="{{ url_for('main.profile') }}">Profile</a></li>
+        <li><a href="{{ url_for('main.articles') }}">Articles</a></li>
+        {% endif %}
+
+        {% if not current_user.is_authenticated %}
+        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+        <li><a href="{{ url_for('auth.signup') }}">Sign Up</a></li>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        {% endif %}
+    </ul>
+
+        <!-- <div class="hero-head #90caf9 blue lighten-3">
             <nav class="navbar">
                 <div class="container">
 
@@ -49,7 +111,7 @@
                     </div>
                 </div>
             </nav>
-        </div>
+        </div> -->
 
         <div class="hero-body #bbdefb blue lighten-4">
             <div class="container">
@@ -58,6 +120,8 @@
             </div>
         </div>
     </section>
+
+    
 </body>
 
 </html>
