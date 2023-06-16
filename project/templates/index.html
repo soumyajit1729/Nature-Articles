@@ -3,11 +3,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Going Green: Small Changes for a Big Impact
-</h1>
-<br>
-<h2 class="subtitle">
-  Environmental development refers to efforts made towards protecting and preserving the natural environment while promoting sustainable practices. It involves the conservation of natural resources, reduction of pollution, and finding innovative ways to address environmental challenges. The ultimate goal is to ensure that our planet remains habitable for future generations by striking a balance between economic development and environmental protection.
-</h2>
+<div class="row">
+  <div class="col s6">
+    <h1 class="title" style="padding-bottom: 20px;">
+      Going Green: Small Changes for a Big Impact
+    </h1>
+    <h2 class="subtitle">
+      Environmental development refers to efforts made towards protecting and preserving the natural environment while promoting sustainable practices. It involves the conservation of natural resources, reduction of pollution, and finding innovative ways to address environmental challenges. The ultimate goal is to ensure that our planet remains habitable for future generations by striking a balance between economic development and environmental protection.
+    </h2>
+    <a href="{{ url_for('main.articles') }}" 
+    class="custom-button waves-effect waves-light btn btn1 blue white-text">Articles</a>
+  </div>
+  <div class="col s6">
+    <img src="{{ url_for('static', filename='pic1.jpg') }}" alt="Image">
+  </div>
+</div>
 {% endblock %}

@@ -6,8 +6,10 @@ import glob
 import docx
 
 # set FLASK_RUN_HOST=0.0.0.0
-# set FLASK_RUN_PORT=3000
+# set FLASK_RUN_PORT=5000
 # export FLASK_APP=project
+# flask run --host=0.0.0.0
+
 
 main = Blueprint('main', __name__)
 

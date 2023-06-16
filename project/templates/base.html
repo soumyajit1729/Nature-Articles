@@ -13,6 +13,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <script>
 
 
@@ -23,7 +26,7 @@
     </script>
 </head>
 
-<body>
+<body style="font-family: 'Montserrat', sans-serif;">
     <section class="hero is-fullheight">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -113,12 +116,38 @@
             </nav>
         </div> -->
 
-        <div class="hero-body #bbdefb blue lighten-4">
+        <div class="hero-body #bbdefb">
             <div class="container">
                {% block content %}
                {% endblock %}
             </div>
         </div>
+
+        <footer class="page-footer blue">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Environmental Development</h5>
+                  <p class="grey-text text-lighten-4">Join us in our mission to protect and preserve our environment for future generations. Together, we can make a positive impact on the planet and create a sustainable future. Stay informed, take action, and inspire others to make environmentally conscious choices. Together, we can make a difference.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Important Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2014 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+              </div>
+            </div>
+          </footer>
     </section>
 
     

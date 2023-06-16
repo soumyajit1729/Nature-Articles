@@ -3,14 +3,16 @@
 {% extends "base.html" %}
 
 {% block content %}
+<img src="{{ url_for('static', filename='pic2.jpg') }}" alt="Image">
+<h1>Our Recent Articles</h1>
     {% for post in posts %}
 			<div class="card">
 				<div class="card-content">
-					<span class="card-title">{{ post.title }}</span>
+					<span class="card-title"><b>{{ post.title }}</b></span>
 					<p>{{ post.content[:400] }}</p>
 				</div>
 				<div class="card-action blue-text">
-					<a href="/blog/{{ post.id }}" class="blue-text">Read More</a>
+					<a href="/blog/{{ post.id }}" class="blue-text"><b>Open Article</b></a>
 				</div>
 			</div>
 		{% endfor %}
