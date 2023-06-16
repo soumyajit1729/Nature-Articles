@@ -11,8 +11,11 @@
     <h2 class="subtitle">
       Environmental development refers to efforts made towards protecting and preserving the natural environment while promoting sustainable practices. It involves the conservation of natural resources, reduction of pollution, and finding innovative ways to address environmental challenges. The ultimate goal is to ensure that our planet remains habitable for future generations by striking a balance between economic development and environmental protection.
     </h2>
-    <a href="{{ url_for('main.articles') }}" 
-    class="custom-button waves-effect waves-light btn btn1 blue white-text">Articles</a>
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('main.articles') }}" 
+      class="custom-button waves-effect waves-light btn btn1 blue white-text">Articles</a>
+    {% endif %}
+    
   </div>
   <div class="col s6">
     <img src="{{ url_for('static', filename='pic1.jpg') }}" alt="Image">
