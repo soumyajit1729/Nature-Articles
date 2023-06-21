@@ -1,6 +1,6 @@
 # main.py
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from flask_login import login_required, current_user
 import glob
 import docx
@@ -30,13 +30,15 @@ mid = len(posts)+1
 for file in docx_files:
     doc = docx.Document(file)
     heading = doc.paragraphs[0].text
-    body = "\n".join([p.text for p in doc.paragraphs[1:]])
+    keywords = doc.paragraphs[1].text
+    keywords = keywords.split(',')
+    body = "\n".join([p.text for p in doc.paragraphs[2:]])
     # print("Heading: ", heading)
     # print("Body: ", body)
     print(len(doc.paragraphs))
     if mid==6:
         print("Body: ", body)
-    posts.append({'id':mid, 'title': heading, 'content': body})
+    posts.append({'id':mid, 'title': heading, 'content': body, 'keywords': keywords})
     mid = mid+1
 
 @main.route('/')
@@ -52,6 +54,19 @@ def profile():
 @login_required
 def articles():
     return render_template('articles.html', name=current_user.name, posts=posts)
+
+@main.route('/search')
+@login_required
+def search():
+    query = request.args.get('query', '')
+    search_results = [article for article in posts 
+                      if (query.lower() in article['title'].lower() 
+                          or query.lower() in article['content'].lower()
+                          or query.lower() in " ".join(article['keywords']).lower())]
+    return render_template('searchpage.html', 
+                           name=current_user.name, 
+                           posts=search_results, message = "Search result for '"+query+"'")
+
 
 # Blog page
 @main.route('/blog/<int:post_id>')

@@ -6,6 +6,12 @@
 <img src="{{ url_for('static', filename='pic2.jpg') }}" alt="Image">
     <div class="container">
         <h2>{{ post.title|safe }}</h2>
+        <div class="chips">
+            {% for keyword in post.keywords %}
+              <div class="chip">{{ keyword }}</div>
+            {% endfor %}
+        </div>
+          
         <p>{{ post.content|replace("\n", "<br>")|safe}}</p>
     </div>
 {% endblock %}
