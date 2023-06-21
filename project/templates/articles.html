@@ -5,17 +5,16 @@
 {% block content %}
 <img src="{{ url_for('static', filename='pic2.jpg') }}" alt="Image">
 <h5>Search anything here: </h5>
-<nav class="grey lighten-3" style="border: 1px solid black;">
-    <div class="nav-wrapper" >
-      <form action="/search" method="GET">
-        <div class="input-field">
-          <input id="search" type="search" name="query" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
+<nav>
+	<div class="nav-wrapper white" style="border: 1px solid grey;">
+	  <form action="/search" method="GET">
+		<div class="input-field">
+		  <input id="search" type="search" name="query" required>
+		  <label class="label-icon" for="search"><i class="material-icons" style="color: black;">search</i></label>
+		</div>
+	  </form>
+	</div>
+</nav>
 <h1>Our Recent Articles</h1>
     {% for post in posts %}
 			<div class="card">
