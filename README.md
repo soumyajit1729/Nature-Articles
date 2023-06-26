@@ -8,4 +8,4 @@ go to the current directory and run the following commands\
 `flask run --host=0.0.0.0`
 
 ### Changing passcode
-change the passcode to whatever you want in the file main.py in line number 16
+change the passcode to whatever you want in the file auth.py (which is inside project folder) in line number 11
